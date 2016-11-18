@@ -13,7 +13,7 @@ An appliction of show where your went and what were you done
 <body>
 	<div id="main">
 		<ul id="map">
-		<!-- 新疆 -->	
+		<!--新疆-->	
 		<li class="xinJiang">
 			<h3>新疆</h3>
 			<div class="content">
@@ -22,16 +22,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil0">字体：</label>
+									<select name="fontFamil" id="fontFamil0" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize0">字号：</label>
+									<select name="fontsize" id="fontsize0" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme0">选择主题</label>
+									<select name="theme" id="theme0" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<span class="import_img">
-						<img src="images/29406e2046f1ed0d.png" alt="传入图片" >
-					</span>
-					<textarea class="import_text" placeholder="Hello World!" pholder="Hello World!"></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text0" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -39,8 +79,8 @@ An appliction of show where your went and what were you done
 					<div class="scale"></div>
 				</div>
 			</div>
-			<div class="target"></div> 
-		</li>  
+			<div class="target"></div>
+		</li> 
 		<!-- 西藏 -->	
 		<li class="xiZang">
 			<h3>西藏</h3>
@@ -50,14 +90,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil1">字体：</label>
+									<select name="fontFamil" id="fontFamil1" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize1">字号：</label>
+									<select name="fontsize" id="fontsize1" onchange = "changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme1">选择主题</label>
+									<select name="theme" id="theme1" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
 					<img src="images/1.jpg" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<form action="#" method="get">
+						<textarea class="import_text" id="text1" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -67,59 +149,7 @@ An appliction of show where your went and what were you done
 			</div>
 			<div class="target"></div>
 		</li>
-		<!-- 甘肃 -->	
-		<li class="gaSu">
-			<h3>甘肃</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/2.jpg" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 青海 -->	
-		<li class="qingHai">
-			<h3>青海</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 内蒙古 -->	
+		<!--内蒙古-->	
 		<li class="neiMengGu">
 			<h3>内蒙古</h3>
 			<div class="content">
@@ -128,14 +158,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil2">字体：</label>
+									<select name="fontFamil" id="fontFamil2" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize2">字号：</label>
+									<select name="fontsize" id="fontsize2" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme2">选择主题</label>
+									<select name="theme" id="theme2" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text2" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -145,7 +217,75 @@ An appliction of show where your went and what were you done
 			</div>
 			<div class="target"></div>
 		</li>
-		<!-- 宁夏 -->	
+		 <!--甘肃-->	
+		<li class="gaSu">
+			<h3>甘肃</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil3">字体：</label>
+									<select name="fontFamil" id="fontFamil3" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize3">字号：</label>
+									<select name="fontsize" id="fontsize3" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme3">选择主题</label>
+									<select name="theme" id="theme3" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text3" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li>
+		 <!--宁夏-->	
 		<li class="ningXia">
 			<h3>宁夏</h3>
 			<div class="content">
@@ -154,14 +294,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil4">字体：</label>
+									<select name="fontFamil" id="fontFamil4" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize4">字号：</label>
+									<select name="fontsize" id="fontsize4" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme4">选择主题</label>
+									<select name="theme" id="theme4" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text4" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -170,8 +352,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 陕西 -->	
+		</li> 
+		<!--陕西-->	
 		<li class="shangXi">
 			<h3>陕西</h3>
 			<div class="content">
@@ -180,14 +362,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil5">字体：</label>
+									<select name="fontFamil" id="fontFamil5" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize5">字号：</label>
+									<select name="fontsize" id="fontsize5" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme5">选择主题</label>
+									<select name="theme" id="theme5" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text5" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -196,112 +420,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 四川 -->	
-		<li class="siChuan">
-			<h3>四川</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 重庆 -->	
-		<li class="chongQian">
-			<h3>重庆</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 贵州 -->	
-		<li class="guiZhou">
-			<h3>贵州</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 云南 -->	
-		<li class="yunNan">
-			<h3>云南</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 山西 -->	
+		</li> 
+		<!--山西-->	
 		<li class="shanXi">
 			<h3>山西</h3>
 			<div class="content">
@@ -310,27 +430,66 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil6">字体：</label>
+									<select name="fontFamil" id="fontFamil6" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize6">字号：</label>
+									<select name="fontsize" id="fontsize6" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme6">选择主题</label>
+									<select name="theme" id="theme6" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text6" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
 					<button class="no">取消</button>
 					<div class="scale"></div>
-					<div class="scale"></div>
 				</div>
 			</div>
 			<div class="target"></div>
 		</li>
-		
-
-		<!-- 河南 -->	
+		 <!--河南-->	
 		<li class="heiNan">
 			<h3>河南</h3>
 			<div class="content">
@@ -339,14 +498,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil7">字体：</label>
+									<select name="fontFamil" id="fontFamil7" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize7">字号：</label>
+									<select name="fontsize" id="fontsize7" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme7">选择主题</label>
+									<select name="theme" id="theme7" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text7" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -355,8 +556,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 湖北 -->	
+		</li> 
+		<!--湖北-->	
 		<li class="huBei">
 			<h3>湖北</h3>
 			<div class="content">
@@ -365,14 +566,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil8">字体：</label>
+									<select name="fontFamil" id="fontFamil8" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize8">字号：</label>
+									<select name="fontsize" id="fontsize8" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme8">选择主题</label>
+									<select name="theme" id="theme8" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text8" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -381,8 +624,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-			</li>
-		<!-- 湖南 -->	
+		</li> 
+		<!--湖南-->	
 		<li class="huNan">
 			<h3>湖南</h3>
 			<div class="content">
@@ -391,14 +634,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil9">字体：</label>
+									<select name="fontFamil" id="fontFamil9" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize9">字号：</label>
+									<select name="fontsize" id="fontsize9" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme9">选择主题</label>
+									<select name="theme" id="theme9" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text9" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -407,113 +692,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 广西 -->	
-		<li class="guangXi">
-			<h3>广西</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 黑龙江 -->	
-		<li class="heiLongJiang">
-			<h3>黑龙江</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 吉林 -->	
-		<li class="jiLin">
-			<h3>吉林</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 辽宁 -->	
-		<li class="liaoNing">
-			<h3>辽宁</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 河北 -->	
+		</li> 
+		<!--河北-->	
 		<li class="heiBei">
 			<h3>河北</h3>
 			<div class="content">
@@ -522,14 +702,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil10">字体：</label>
+									<select name="fontFamil" id="fontFamil10" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize10">字号：</label>
+									<select name="fontsize" id="fontsize10" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme10">选择主题</label>
+									<select name="theme" id="theme10" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text10" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -538,8 +760,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 北京 -->	
+		</li> 
+		<!--北京-->	
 		<li class="beiJing">
 			<h3>北京</h3>
 			<div class="content">
@@ -548,25 +770,66 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil11">字体：</label>
+									<select name="fontFamil" id="fontFamil11" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize11">字号：</label>
+									<select name="fontsize" id="fontsize11" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme11">选择主题</label>
+									<select name="theme" id="theme11" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text11" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
 					<button class="no">取消</button>
 					<div class="scale"></div>
-					<div class="scale"></div>
 				</div>
 			</div>
 			<div class="target"></div>
 		</li>
-		<!-- 天津 -->	
+		 <!--天津-->	
 		<li class="tianJin">
 			<h3>天津</h3>
 			<div class="content">
@@ -575,14 +838,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil12">字体：</label>
+									<select name="fontFamil" id="fontFamil12" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize12">字号：</label>
+									<select name="fontsize" id="fontsize12" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme12">选择主题</label>
+									<select name="theme" id="theme12" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text12" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -592,7 +897,7 @@ An appliction of show where your went and what were you done
 			</div>
 			<div class="target"></div>
 		</li>
-		<!-- 山东 -->	
+		 <!--山东-->	
 		<li class="shangDong">
 			<h3>山东</h3>
 			<div class="content">
@@ -601,14 +906,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil13">字体：</label>
+									<select name="fontFamil" id="fontFamil13" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize13">字号：</label>
+									<select name="fontsize" id="fontsize13" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme13">选择主题</label>
+									<select name="theme" id="theme13" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text13" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -617,8 +964,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-			</li>
-		<!-- 安徽 -->	
+		</li>
+		 <!--安徽-->	
 		<li class="anHui">
 			<h3>安徽</h3>
 			<div class="content">
@@ -627,14 +974,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil14">字体：</label>
+									<select name="fontFamil" id="fontFamil14" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize14">字号：</label>
+									<select name="fontsize" id="fontsize14" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme14">选择主题</label>
+									<select name="theme" id="theme14" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text14" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -643,8 +1032,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 江苏 -->	
+		</li> 
+		<!--江苏-->	
 		<li class="jiangSu">
 			<h3>江苏</h3>
 			<div class="content">
@@ -653,14 +1042,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil15">字体：</label>
+									<select name="fontFamil" id="fontFamil15" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize15">字号：</label>
+									<select name="fontsize" id="fontsize15" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme15">选择主题</label>
+									<select name="theme" id="theme15" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text15" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -669,8 +1100,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 上海 -->	
+		</li> 
+		<!--上海-->	
 		<li class="shangHai">
 			<h3>上海</h3>
 			<div class="content">
@@ -679,25 +1110,66 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil16">字体：</label>
+									<select name="fontFamil" id="fontFamil16" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize16">字号：</label>
+									<select name="fontsize" id="fontsize16" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme16">选择主题</label>
+									<select name="theme" id="theme16" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text16" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
 					<button class="no">取消</button>
 					<div class="scale"></div>
-					<div class="scale"></div>
 				</div>
 			</div>
 			<div class="target"></div>
 		</li>
-		<!-- 江西 -->	
+		 <!--江西-->	
 		<li class="jiangXi">
 			<h3>江西</h3>
 			<div class="content">
@@ -706,14 +1178,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil17">字体：</label>
+									<select name="fontFamil" id="fontFamil17" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize17">字号：</label>
+									<select name="fontsize" id="fontsize17" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme17">选择主题</label>
+									<select name="theme" id="theme17" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text17" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -723,7 +1237,7 @@ An appliction of show where your went and what were you done
 			</div>
 			<div class="target"></div>
 		</li>
-		<!-- 浙江 -->	
+		 <!--浙江-->	
 		<li class="zheJiang">
 			<h3>浙江</h3>
 			<div class="content">
@@ -732,14 +1246,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil18">字体：</label>
+									<select name="fontFamil" id="fontFamil18" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize18">字号：</label>
+									<select name="fontsize" id="fontsize18" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme18">选择主题</label>
+									<select name="theme" id="theme18" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text18" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -748,8 +1304,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 福建 -->	
+		</li> 
+		<!--福建-->	
 		<li class="fuJian">
 			<h3>福建</h3>
 			<div class="content">
@@ -758,14 +1314,56 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil19">字体：</label>
+									<select name="fontFamil" id="fontFamil19" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize19">字号：</label>
+									<select name="fontsize" id="fontsize19" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme19">选择主题</label>
+									<select name="theme" id="theme19" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text19" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -774,114 +1372,8 @@ An appliction of show where your went and what were you done
 				</div>
 			</div>
 			<div class="target"></div>
-		</li>
-		<!-- 广东 -->	
-		<li class="guangDong">
-			<h3>广东</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 香港 -->	
-		<li class="xiangGai">
-			<h3>香港</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 澳门 -->	
-		<li class="aoMen">
-			<h3>澳门</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 海南 -->	
-		<li class="haiNan">
-			<h3>海南</h3>
-			<div class="content">
-				<div class="content_menu">
-					<h4 class="title4">你的标题</h4>
-					<p class="asistant icon-menu"></p>
-					<ul class="list">
-						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
-						<li class="item">收起</li>
-					</ul>
-				</div>
-				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
-				</div>
-				<div class="content_foot">
-					<button class="yes">确实</button>
-					<button class="no">取消</button>
-					<div class="scale"></div>
-					<div class="scale"></div>
-				</div>
-			</div>
-			<div class="target"></div>
-		</li>
-		<!-- 台湾 -->	
+		</li> 
+		<!--台湾-->	
 		<li class="taiWan">
 			<h3>台湾</h3>
 			<div class="content">
@@ -890,14 +1382,940 @@ An appliction of show where your went and what were you done
 					<p class="asistant icon-menu"></p>
 					<ul class="list">
 						<li class="item">设置</li>
-						<li class="item">字体</li>
-						<li class="item">主题</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil20">字体：</label>
+									<select name="fontFamil" id="fontFamil20" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize20">字号：</label>
+									<select name="fontsize" id="fontsize20" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme20">选择主题</label>
+									<select name="theme" id="theme20" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
 						<li class="item">收起</li>
 					</ul>
 				</div>
 				<div class="content_text">
-					<img src="images/29406e2046f1ed0d.png" alt="传入图片" class="import_img">
-					<textarea class="import_text" placeholder="Hello World!" ></textarea>
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text20" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--广东-->	
+		<li class="guangDong">
+			<h3>广东</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil21">字体：</label>
+									<select name="fontFamil" id="fontFamil21" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize21">字号：</label>
+									<select name="fontsize" id="fontsize21" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme21">选择主题</label>
+									<select name="theme" id="theme21" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text21" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--香港-->	
+		<li class="xiangGai">
+			<h3>香港</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil22">字体：</label>
+									<select name="fontFamil" id="fontFamil22" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize22">字号：</label>
+									<select name="fontsize" id="fontsize22" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme22">选择主题</label>
+									<select name="theme" id="theme22" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text22" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--澳门-->	
+		<li class="aoMen">
+			<h3>澳门</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil23">字体：</label>
+									<select name="fontFamil" id="fontFamil23" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize23">字号：</label>
+									<select name="fontsize" id="fontsize23" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme23">选择主题</label>
+									<select name="theme" id="theme23" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text23" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--辽宁-->	
+		<li class="liaoNing">
+			<h3>辽宁</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil24">字体：</label>
+									<select name="fontFamil" id="fontFamil24" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize24">字号：</label>
+									<select name="fontsize" id="fontsize24" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme24">选择主题</label>
+									<select name="theme" id="theme24" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text24" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--吉林-->	
+		<li class="jiLin">
+			<h3>吉林</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil25">字体：</label>
+									<select name="fontFamil" id="fontFamil25" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize25">字号：</label>
+									<select name="fontsize" id="fontsize25" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme25">选择主题</label>
+									<select name="theme" id="theme25" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text25" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--黑龙江-->	
+		<li class="heiLongJiang">
+			<h3>黑龙江</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil26">字体：</label>
+									<select name="fontFamil" id="fontFamil26" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize26">字号：</label>
+									<select name="fontsize" id="fontsize26" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme26">选择主题</label>
+									<select name="theme" id="theme26" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text26" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--青海-->	
+		<li class="qingHai">
+			<h3>青海</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil27">字体：</label>
+									<select name="fontFamil" id="fontFamil27" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize27">字号：</label>
+									<select name="fontsize" id="fontsize27" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme27">选择主题</label>
+									<select name="theme" id="theme27" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text27" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--四川-->	
+		<li class="siChuan">
+			<h3>四川</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil28">字体：</label>
+									<select name="fontFamil" id="fontFamil28" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize28">字号：</label>
+									<select name="fontsize" id="fontsize28" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme28">选择主题</label>
+									<select name="theme" id="theme28" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text28" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--重庆-->	
+		<li class="chongQian">
+			<h3>重庆</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil29">字体：</label>
+									<select name="fontFamil" id="fontFamil29" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize29">字号：</label>
+									<select name="fontsize" id="fontsize29" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme29">选择主题</label>
+									<select name="theme" id="theme29" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text29" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--云南-->	
+		<li class="yunNan">
+			<h3>云南</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil30">字体：</label>
+									<select name="fontFamil" id="fontFamil30" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize30">字号：</label>
+									<select name="fontsize" id="fontsize30" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme30">选择主题</label>
+									<select name="theme" id="theme30" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text30" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--贵州-->	
+		<li class="guiZhou">
+			<h3>贵州</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil31">字体：</label>
+									<select name="fontFamil" id="fontFamil31" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize31">字号：</label>
+									<select name="fontsize" id="fontsize31" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme31">选择主题</label>
+									<select name="theme" id="theme31" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text31" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--广西-->	
+		<li class="guangXi">
+			<h3>广西</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil0">字体：</label>
+									<select name="fontFamil" id="fontFamil32" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize32">字号：</label>
+									<select name="fontsize" id="fontsize32" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme32">选择主题</label>
+									<select name="theme" id="theme32" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text32" placeholder="Hello World!" ></textarea>
+					</form>
+				</div>
+				<div class="content_foot">
+					<button class="yes">确实</button>
+					<button class="no">取消</button>
+					<div class="scale"></div>
+				</div>
+			</div>
+			<div class="target"></div>
+		</li> 
+		<!--海南-->	
+		<li class="haiNan">
+			<h3>海南</h3>
+			<div class="content">
+				<div class="content_menu">
+					<h4 class="title4">你的标题</h4>
+					<p class="asistant icon-menu"></p>
+					<ul class="list">
+						<li class="item">设置</li>
+						<li class="item">
+							<p  class="font">字体</p>
+							<div class="setFont">
+								<form action="#" method="get">
+									<label for="fontFamil33">字体：</label>
+									<select name="fontFamil" id="fontFamil33" onchange="changeFamily(this)">
+										<option value="Microsoft YaHei">Microsoft YaHei</option>
+										<option value="Arial">Arial</option>
+										<option value="宋体">宋体</option>
+										<option value="黑体">黑体</option>
+										<option value="sans-serif">sans-serif</option>
+									</select>
+									<br/>
+									<label for="fontsize33">字号：</label>
+									<select name="fontsize" id="fontsize33" onchange="changeSize(this)">
+										<option value="10px">12px</option>
+										<option value="14px">14px</option>
+										<option value="16px">16px</option>
+										<option value="18px">18px</option>
+										<option value="20px">20px</option>
+										<option value="22px">22px</option>
+										<option value="24px">24px</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">
+							<p class="themes">主题</p>
+							<div class="setTheme">
+								<form action="#" method="get">
+									<label for="theme33">选择主题</label>
+									<select name="theme" id="theme33" onchange="runingTheme(this)">
+										<option value="#af7f7f">淡红</option>
+										<option value="#abad91">淡黄</option>
+										<option value="#93af7f">淡绿</option>
+										<option value="#91bbb0">淡蓝</option>
+										<option value="#7a869c">深蓝</option>
+										<option value="#9d91ad">淡紫</option>
+									</select>
+								</form>
+							</div>
+						</li>
+						<li class="item">收起</li>
+					</ul>
+				</div>
+				<div class="content_text">
+					<img src="images/1.jpg" alt="传入图片" class="import_img">
+					<form action="#" method="get">
+						<textarea class="import_text" id="text33" placeholder="Hello World!" ></textarea>
+					</form>
 				</div>
 				<div class="content_foot">
 					<button class="yes">确实</button>
@@ -912,3 +2330,4 @@ An appliction of show where your went and what were you done
 	</div>
 </body>
 </html>
+
