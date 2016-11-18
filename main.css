@@ -1,0 +1,436 @@
+# Record-your-footmark
+An appliction of show where your went and what were you done
+@font-face{
+	font-family:"imooc-icon";
+	src:url("../font/fonts/icomoon.eot") format("embeded-opentype"),
+	url("../font/fonts/icomoon.woff") format("woff"),
+	url("../font/fonts/icomoon.ttf") format("truetype"),
+	url("../font/fonts/icomoon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* PS1：
+		IE10支持transition; -webkit-transition兼容Safari
+ */
+body{ 	
+	background: #2b2533; }
+#main{ 
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;}
+#map{ 
+	width: 100%;
+	text-align: center;
+	position: relative; }
+
+#map li{ 
+	position: absolute;
+	cursor: pointer;
+	background: #5d544a;
+	border: 1px solid #000; }
+
+
+#map .content{ 
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -250px;
+	z-index: 100;
+	width: 500px;
+	height: 0;
+	overflow: hidden;
+	-webkit-transition: height 0.5s linear;
+	transition: height 0.5s linear; }
+
+/*编辑页菜单栏*/
+#map .content_menu{	
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 40px;
+	background: #af7f7f; }
+
+/*h4*/
+#map .content_menu .title4{ 
+	font-size: 22px;
+	text-align: center;
+	line-height: 40px; }
+
+/*菜单图标及列表*/
+#map .content_menu .asistant{	
+	font-family: "imooc-icon";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	text-align: center;
+	position: absolute;
+	top: 5px;
+	right: 16px;
+	width: 70px;
+	height: 100%; }
+ #map .content_menu .icon-menu:before{ 
+  	content:"\e9bd"; }  
+#map .content_menu .list{
+	display: none;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+	z-index: 1;
+	width: 64px;
+	height: 200px;}
+#map .content_menu li.item{ 
+	position: static;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	text-align: center;
+	background: #af7f7f; }
+
+
+
+/*自由选择字体、颜色区*/
+#map .content_menu .setFont,
+#map .content_menu .setTheme{ 	
+	position: absolute;
+	top: 50px;
+	left: 90px;
+
+	padding: 10px;
+	text-align: left;
+	background: #af7f7f;
+	-webkit-transition: all 0.3s linear; }
+#map .content_menu .setFont{
+	width: 180px;
+	height: 100px;}
+
+#map .content_menu .setTheme{
+	width: 180px;
+	height: 60px;}
+	
+
+
+
+/*编辑页内容编辑区块*/
+#map .content_text{	
+	position: absolute;
+	top: 40px;
+	bottom: 40px;
+	width: 100%;
+	background: #ccc;
+	text-align: center;
+	overflow: scroll; }
+ #map .content_text .import_img{
+ 	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	line-height: 100%;
+	text-align: center;
+	overflow: hidden; }
+
+#map .content_text .import_text{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%; 
+	height: 100%;
+	border: none;
+	background: #fff;} 
+
+/*编辑页按钮区块*/
+#map .content_foot{	
+	position: absolute;
+	bottom: 0;
+    width: 100%;
+	height: 40px; }
+#map .content_foot button{ 
+	width: 50%;
+	height: 100%;
+	float: left;
+	border: none;
+	outline: none;
+	background:#af7f7f;  }
+#map .content_foot button:hover{ 
+	background: #aaa; }
+
+
+
+/*编辑页面缩放区*/
+#map .content .scale{ 
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	width: 30px;
+	height: 40px;
+	cursor: se-resize; }
+
+/*城市闪烁点*/
+@-webkit-keyframes fadeOut{
+	from{-webkit-transform: scale(0.5);}
+	to{-webkit-transform: scale(1); opacity: 0;}
+}
+@-moz-keyframes fadeOut{
+	from{-webkit-transform: scale(0.5);}
+	to{-webkit-transform: scale(1); opacity: 0;}
+}
+@-o-keyframes fadeOut{
+	from{-webkit-transform: scale(0.5);}
+	to{-webkit-transform: scale(1); opacity: 0;}
+}
+@keyframes fadeOut{
+	from{-webkit-transform: scale(0.5);}
+	to{-webkit-transform: scale(1); opacity: 0;}
+}
+
+#map  .target{ 
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	background: #f00;
+	border-radius: 50%;
+	-webkit-animation: fadeOut 1s infinite linear alternate; 
+	animation: fadeOut 1s infinite linear alternate; } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#map .xinJiang{
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 160px;}
+.neiMengGu{
+	top: 86px;
+	left: 307px;
+	width: 550px;
+	height: 150px;
+	}
+.xiZang{
+	top: 160px;
+	left: 0;
+	width: 150px;
+	height: 150px;
+	}
+.gaSu{
+	top:100px;
+	left: 150px;
+	width: 157px;
+	height: 78px;
+	}
+.ningXia{
+	top:236px;
+	left: 307px;
+	width: 76px;
+	height: 62px;
+	} 
+.shangXi{
+	top:236px;
+	left: 383px;
+	width: 236px;
+	height: 62px;
+	}
+.shanXi{
+	top:236px;
+	left: 619px;
+	width: 77px;
+	height: 62px;
+	}
+
+.heiNan{
+	top:298px;
+	left: 502px;
+	width: 119px;
+	height: 72px;
+	}
+
+.huBei{
+	top:370px;
+	left: 502px;
+	width: 119px;
+	height: 72px;
+	}
+
+.huNan{
+	top: 450px;
+	left: 621px;
+	width: 99px;
+	height: 78px; }
+
+.heiBei{
+	top:236px;
+	left: 696px;
+	width: 160px;
+	height: 62px; }
+
+.beiJing{
+	top:298px;
+	left: 621px;
+	width: 60px;
+	height: 56px; }
+
+
+.tianJin{
+	top:298px;
+	left: 681px;
+	width: 60px;
+	height: 56px; }
+
+
+.shangDong{
+	top:354px;
+	left: 621px;
+	width: 160px;
+	height: 46px; }
+
+ .anHui{
+	top:400px;
+	left: 621px;
+	width: 146px;
+	height: 50px; } 
+
+
+
+ .jiangSu{
+	top:400px;
+	left: 767px;
+	width: 106px;
+	height: 50px; } 
+
+
+
+  .shangHai{
+  	top:400px;
+  	left: 873px;
+  	width: 46px;
+  	height: 50px;
+;}  
+
+ .jiangXi{
+	top:450px;
+	left: 720px;
+	width: 106px;
+	height: 78px; } 
+
+ 
+ .zheJiang{
+	top:450px;
+	left: 826px;
+	width: 106px;
+	height: 78px; } 
+
+ .fuJian{
+	top: 528px;
+	left: 827px;
+	width: 84px;
+	height: 78px; } 
+
+
+ .taiWan{
+	top:527px;
+	left: 1002px;
+	width: 42px;
+	height: 78px; }
+
+ .guangDong{
+	top:528px;
+	left: 621px;
+	width: 206px;
+	height: 80px; } 
+
+
+ .xiangGai{
+	top:608px;
+	left: 704px;
+	width: 32px;
+	height: 30px; } 
+
+
+ .aoMen{
+	top:608px;
+	left: 755px;
+	width: 32px;
+	height: 30px; }
+
+
+.liaoNing{
+	top:236px;
+	left: 856px;
+	width: 106px;
+	height: 56px; }
+.jiLin{
+	top:236px;
+	left: 962px;
+	width: 106px;
+	height: 56px; }
+.heiLongJiang{
+	top: 72px;
+	left: 857px;
+	width: 168px;
+	height: 164px; }
+.qingHai{
+	top: 178px;
+	left: 150px;
+	width: 157px;
+	height: 120px; }
+.siChuan{
+	top: 298px;
+	left: 312px;
+	width: 140px;
+	height: 94px; }
+.chongQian{
+	top: 298px;
+	left: 452px;
+	width: 50px;
+	height: 144px; }
+.yunNan{
+	top: 392px;
+	left: 314px;
+	width: 138px;
+	height: 110px; }
+
+.guiZhou{
+	top: 442px;
+	left: 452px;
+	width: 169px;
+	height: 76px; }
+
+.guangXi{
+	top: 518px;
+	left: 455px;
+	width: 166px;
+	height: 76px; }
+
+.haiNan{ 
+	top: 653px;
+	left: 649px;
+	width: 80px;
+	height: 76px; }
