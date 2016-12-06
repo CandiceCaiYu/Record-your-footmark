@@ -2,16 +2,18 @@
 An appliction of show where your went and what were you done
 
 
+
+
 var allPlaces = ['xinJiang','xiZang','neiMengGu','gaSu','ningXia','shangXi','shanXi','heiNan',
 				'huBei','huNan','heiBei','beiJing','tianJin','shangDong','anHui','jiangSu','shangHai','jiangXi',
 				'zheJiang','fuJian','taiWan','guangDong','xiangGai','aoMen','liaoNing','jiLin',
 				'heiLongJiang','qingHai','siChuan','chongQian','yunNan','guiZhou', 'guangXi','haiNan'];
 window.onload = function(){
-	var content = getClassNames('content','map'),
+	var mainTheme = document.getElementById('mainTheme'),
+		content = getClassNames('content','map'),
 		target = getClassNames('target','map'),
-		scale = getClassNames('scale','map'),
+
 		title4 = getClassNames('title4','map'),
-		foot = getClassNames('content_foot','map'),
 		menu = getClassNames('asistant icon-menu','map'),
 		list = getClassNames('list', 'map'),
 		font = getClassNames('font', 'map'),
@@ -19,13 +21,67 @@ window.onload = function(){
 		fontfamily = getClassNames('import_text','map'),
 		themes = getClassNames('themes','map'),
 		setTheme = getClassNames('setTheme','map'),
+		imgs = getClassNames('import_img','map'),
+		imgsURL = getClassNames('imgURL','map'),
+
+		scale1 = getClassNames('scale1','map'),
+		scale2 = getClassNames('scale2','map'),
+		foot = getClassNames('content_foot','map'),	
+		btn_yes = getClassNames('yes','map'),	
+		btn_no = getClassNames('no','map'),	
 		len = allPlaces.length;
 
-		console.log(len);
-
-	positions(len,allPlaces,content,scale,menu,list,target,foot,title4,font,setfont,themes,setTheme,'map');
+		positions(allPlaces,content,target,title4,menu,list,font,setfont,themes,setTheme,imgs,imgsURL,scale1,scale2,foot,btn_yes,btn_no,len,'map');
 	
+//图片地址帮助页面
+		var left = document.getElementById('left'),
+			right = document.getElementById('right'),
+			top = document.getElementById('top'),
+			help = document.getElementById('help'),
+			lis = help.getElementsByTagName('li');
+		
+		getImgURL(left,right,help,lis);
+
+//回到顶部
+		window.onscroll = function(){
+			var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+			if(scrolltop>600){
+				top.style.opacity = 1;
+			}else{
+				top.style.opacity = 0;
+			}
+			top.onclick = function(){
+				(document.documentElement.scrollTop = 0) || (document.body.scrollTop = 0);
+			}
+		}
+
+
+//主页面背景色（白天不懂夜的黑）
+		var bright = document.getElementById('bright'),
+			black = document.getElementById('black');
+			bright.onclick = function(){
+				this.style.color = '#000';
+				black.style.color = '#000';
+				mainTheme.style.color = '#000';
+				top.style.color = '#000';
+				document.body.style.background = '#fff';
+				for(var i=0; i<len; i++){
+					getClassNames(allPlaces[i],'map')[0].style.background = '#e0a461';
+				}
+			}
+			black.onclick = function(){
+				this.style.color = '#fff';
+				bright.style.color = '#fff';
+				mainTheme.style.color = '#fff';
+				top.style.color = '#fff';
+				document.body.style.background = '#2b2533';
+				for(var i=0; i<len; i++){
+					getClassNames(allPlaces[i],'map')[0].style.background = '#5d544a';
+				}
+			}
 }
+
+
 
 
 //根据类名来获取元素
@@ -41,98 +97,117 @@ function getClassNames(className, parent){
 	return sons;
 }
 
+
 //冒泡处理
 function puple(event){
-	event = event || window;
-	event.cancelBubble = true || event.stopPropagation() ;
+	event = event || window.event;
+	event.cancelBubble = true || event.stopPropagation();
 }
-
-
-
 
 // 定位编辑页面
 // 所有对编辑页面的操作都在这执行
-function positions(len,allPlaces,content,scale,menu,list,target,foot,title4,font,setfont,themes,setTheme,ancient){
-
+function positions(allPlaces,content,target,title4,menu,list,font,setfont,themes,setTheme,imgs,imgsURL,scale1,scale2,foot,btn_yes,btn_no,len,ancient){
 	var place;
 	for(var i=0; i<len; i++){
 		place = getClassNames(allPlaces[i],ancient)[0];
-		contentBtn = content[i].getElementsByTagName('button');
-		//content[i].style.left = place.offsetWidth+'px';
-
 
 		//各个功能实现 的函数都在这
-		add(scale[i], content[i]);
+		var colorYes  = '';
+		var colorNo = '';
+		btn_yes[i].onmouseover= function(){
+			colorYes = this.style.background;
+			this.style.background = "#ccc";
+		}
+		btn_yes[i].onmouseout = function(){
+			this.style.background = colorYes;
+		}
+		btn_no[i].onmouseover= function(){
+			colorNo = this.style.background;
+			this.style.background = "#ccc";
+		}
+		btn_no[i].onmouseout = function(){
+			this.style.background = colorNo;
+		}
+
 		cancel(place, content[i], foot[i]);
-		
+
+		add(scale1[i],scale2[i],imgsURL[i],content[i]);
+
+
 		getList(menu[i], list[i]);
 		getTarget(target[i], content[i]);
+
 		change(title4[i]);				
 		setFont(font[i],setfont[i]);
 		changeTheme(themes[i],setTheme[i]);
+
+		getURL(imgs[i],imgsURL[i]);
 	}		
 }
 
 
 
-//编辑页面显示退出
-function cancel(place,content,foot){
+//编辑页面 显示 退出
+function cancel(place,content,foot){		
 	place.onclick = function(event){
-
 		puple(event);
-		var top = place.offsetTop,
-			left = place.offsetLeft,
-			width = place.offsetWidth,
-			height = place.offsetHeight,
-			scrollY = document.body.scrollTop || document.documentElement.scrollTop,
-			scrollX = document.body.scrollLeft || document.documentElement.scrollLeft,
-			x = event.clientX + scrollX,
-			y = event.clientY + scrollY;
+		var top = this.offsetTop,
+			left = this.offsetLeft,
+			width = this.offsetWidth,
+			height = this.offsetHeight,
+			T = top + height,
+			L = left + width,
+			scrolly = document.body.scrollTop || document.documentElement.scrollTop,
+			scrollx = document.body.scrollLeft || document.documentElement.scrollLeft,
+			x = event.clientX + scrollx,
+			y = event.clientY + scrolly;
+				
 			
-			//console.log('top：'+top+' left： '+left+' width：'+width+' height：'+height+' x：'+x+' y：'+y);
-
-		if((x>left && x<width+left) && (y>top && y< height+top)){
+		if(x>left && x<L && y>top && y<T ){
 			content.style.height = '400px';
 		}
 	}
-		foot.onclick = function(event){
-			puple(event);
+		foot.onclick = function(){
 			content.style.height = 0;
 	}
 }
 
-//拖动增加减小页面大小
-function add(scale,content){
-	scale.onmousedown = function(event){
-		puple(event);
-		var x = event.clientX,
-			y = event.clientY;
+//拖动编辑框的右下角，增加减小页面大小或改变页面的位置
+function add(scale1,scale2,imgsURL,content){
+	scale1.onmousedown = allMoving;
+	scale2.onmousedown = allMoving;
+	function allMoving(event){
+		var scaleName = this.className;
 		document.onmousemove = function(event){
-		    var width = content.offsetWidth,
-				height = content.offsetHeight,
-			    top = content.offsetTop,
+			var x = event.clientX,
+				y = event.clientY,
+				top = content.offsetTop,
 				left = content.offsetLeft,
-				addX = x-(width+left),
-				addY = y-(height+top);
-			x = event.clientX;
-			y = event.clientY;
-			content.style.width = width+addX + 'px';
-			content.style.height = height+addY + 'px';
+				width = content.offsetWidth,
+				height = content.offsetHeight;
 
+			if(scaleName == 'scale1'){
+				content.style.top = y - height + 'px';
+				content.style.left = x - width + 'px';
+				imgsURL.style.top = y - height - 40 + 'px';
+				imgsURL.style.left = x - width + 'px';
+			}else if(scaleName == 'scale2'){
+				content.style.width = x - left +'px';
+				content.style.height = y - top +'px';
 			}
+		}
+		
 		document.onmouseup = function(){
 			document.onmousemove = null;
 			document.onmouseup = null;
 		}
-	
 	}
-	
- }
+}
+
 
 // 点击菜单按钮获取设置信息
 function getList(menu,list){
-	menu.onclick = function(event){
-		puple(event);
+	menu.onclick = function(){
 		if(list.style.display == 'block'){
 			list.style.display = 'none';
 		}
@@ -142,7 +217,6 @@ function getList(menu,list){
 	}
 
 }
-
 
 //点击确认按钮后，定位图标开始闪烁
 function getTarget(target,content){
@@ -187,30 +261,23 @@ function setFont(font,setfont){
 
 //选择字体类型
 function changeFamily(family){
-	var len = allPlaces.length;
-	var texts;
-	for(var i=0; i<34; i++){
-		texts = document.getElementById('text'+i);
+	var fontFamilId = family.id;
+	var index = fontFamilId.substring(9);
+	var	texts = document.getElementById('text'+index);
 		texts.style.fontFamily = family.value;
-	}
 }
 
 //选择字体大小
 function changeSize(size){
-	var len = allPlaces.length;
-
-	var texts;
-	for(var i=0; i<34; i++){
-		texts = document.getElementById('text'+i);
-		console.log(texts);
+	var fontsizeId = size.id;
+	var index = fontsizeId.substring(8);
+	var	texts = document.getElementById('text'+index);
 		texts.style.fontSize = size.value;
-	}
 }
 
 //主题框
 function changeTheme(themes,setTheme){
-	themes.onclick = function(event){
-		puple(event);
+	themes.onclick = function(){
 		if(setTheme.offsetLeft == 90){
 			setTheme.style.left = -200 + 'px';
 		}else{
@@ -221,28 +288,94 @@ function changeTheme(themes,setTheme){
 
 
 function runingTheme(color){
-	var contentMenu = getClassNames('content_menu','map'),
-		list = getClassNames('list','map'),
-		yes = getClassNames('yes','map'),
-		no = getClassNames('no','map'),
-		setFont = getClassNames('setFont','map'),
-		setTheme = getClassNames('setTheme','map'),
-		item;
-		
-	for(var i=0, len = contentMenu.length; i<len; i++){
-
-		contentMenu[i].style.background =color.value;
-		yes[i].style.background =color.value;
-		no[i].style.background =color.value;
-		setFont[i].style.background =color.value;
-		setTheme[i].style.background =color.value;
-
-		item = list[i].getElementsByTagName('li');
-		for(var j =0; j<item.length; j++){
-			item[j].style.background = color.value;
-		}
-	}
+	var themeID = color.id;
+	var index = themeID.substring(5);
+	var contentMenu,list,btn,setFont,setTheme,item;
+	contentMenu = getClassNames('content_menu','map')[index];
+	list = getClassNames('list','map')[index];
+	yes = getClassNames('yes','map')[index];
+	no = getClassNames('no','map')[index];
+	setFont = getClassNames('setFont','map')[index];
+	setTheme = getClassNames('setTheme','map')[index];
+	item = list.getElementsByTagName('li');
 	
+	contentMenu.style.background = color.value;
+	list.style.background = color.value;
+	yes.style.background = color.value;
+	no.style.background = color.value;
+	setFont.style.background = color.value;
+	setTheme.style.background = color.value;
+
+	for(var i=0; i<item.length; i++){
+		item[i].style.background = color.value;
+	}
 
 }
+
+//输入路径，添加图片
+function getURL(imgs,imgsURL){
+	imgs.onclick = function(){
+		imgsURL.style.height = 40 + 'px';
+	}
+	imgsURL.onblur = function(){ 
+		this.style.height = 0;
+	}
+}
+
+function imgURLChange(str){	
+	var parent = str.parentNode;
+	var imgs = parent.getElementsByTagName('img')[0];
+	imgs.src = str.value;
+}
+
+
+//输入图片路径的帮助页面
+function getImgURL(left,right,help,lis){
+	var claName = '', 
+		index = 0 ;
+
+	for(var i=0, len = lis.length; i<len; i++){
+		if(lis[i].offsetLeft == 0){
+			 claName = lis[i].className;
+			 index = parseInt(claName.charAt(claName.length-1))-1;
+
+			right.onclick = function(){
+				if(index == len-1){
+					alert('已经是最后一页了！');
+					return;
+				}
+
+				lis[index].style.left = lis[index].offsetLeft + 1000 + 'px';
+				index++;
+				lis[index].style.left = lis[index].offsetLeft + 1000 + 'px';
+			}
+
+			left.onclick = function(){
+				if(index == 0){
+					alert('已经是第一页了！');
+					return;
+				};
+				lis[index].style.left = lis[index].offsetLeft - 1000 + 'px';
+				index--;
+				lis[index].style.left = lis[index].offsetLeft - 1000 + 'px';
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
