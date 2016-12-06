@@ -14,35 +14,57 @@ An appliction of show where your went and what were you done
 		IE10支持transition; -webkit-transition兼容Safari
  */
 body{ 	
-	background: #2b2533; }
+	background: #2b2533;
+	-webkit-transition: all 0.5s linear;
+	transition: all 0.5s linear; }
 #main{ 
-	width: 90%;
-	height: 100%;
-	margin: 0 auto;}
-#map{ 
 	width: 100%;
+	height: 1000px;
+	margin: 0 auto;}
+
+#mainTheme{ 
+	position: fixed;
+	z-index: 100;
+	top: 10px;
+	right: 10px;
+	width: 230px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 26px;
 	text-align: center;
-	position: relative; }
+	color: #ccc; }
+#bright,
+#black{ 
+	cursor: pointer; }
+#bright:hover,
+#black:hover{ 
+	color: #fff;
+	border-radius: 20% 20%;
+	box-shadow: 0 0 20px #ff0;}
+
+
+#map{ 
+	position: relative; 
+	width: 100%;
+	text-align: center; }
 
 #map li{ 
 	position: absolute;
 	cursor: pointer;
 	background: #5d544a;
-	border: 1px solid #000; }
+	border: 1px solid #000;
+	-webkit-transition: all 0.5s linear;
+	transition: all 0.5s linear; }
 
 
 #map .content{ 
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-top: -200px;
-	margin-left: -250px;
+	top: 70px;
+	left: 200px;
 	z-index: 100;
 	width: 500px;
 	height: 0;
-	overflow: hidden;
-	-webkit-transition: height 0.5s linear;
-	transition: height 0.5s linear; }
+	overflow: hidden; }
 
 /*编辑页菜单栏*/
 #map .content_menu{	
@@ -101,7 +123,8 @@ body{
 	padding: 10px;
 	text-align: left;
 	background: #af7f7f;
-	-webkit-transition: all 0.3s linear; }
+	-webkit-transition: all 0.3s linear; 
+	transition: all 0.3s linear; }
 #map .content_menu .setFont{
 	width: 180px;
 	height: 100px;}
@@ -110,6 +133,8 @@ body{
 	width: 180px;
 	height: 60px;}
 	
+#map .content_menu .imgs{ 
+	color: #fff; }
 
 
 
@@ -132,6 +157,14 @@ body{
 	line-height: 100%;
 	text-align: center;
 	overflow: hidden; }
+ #map .content_text .imgURL{ 
+ 	display: block;
+ 	position: fixed;
+ 	top: 30px;
+ 	left: 200px;
+ 	width: 500px;
+ 	height: 0;
+ 	border: none; }
 
 #map .content_text .import_text{
 	display: block;
@@ -142,6 +175,7 @@ body{
 	height: 100%;
 	border: none;
 	background: #fff;} 
+
 
 /*编辑页按钮区块*/
 #map .content_foot{	
@@ -156,20 +190,24 @@ body{
 	border: none;
 	outline: none;
 	background:#af7f7f;  }
-#map .content_foot button:hover{ 
-	background: #aaa; }
+
 
 
 
 /*编辑页面缩放区*/
-#map .content .scale{ 
+#map .content .scale1,
+#map .content .scale2{ 
 	position: absolute;
-	bottom: 0;
 	right: 0;
 	z-index: 100;
 	width: 30px;
-	height: 40px;
-	cursor: se-resize; }
+	height: 20px;}
+#map .content .scale1{ 
+	bottom: 20px;
+	cursor: crosshair; }
+#map .content .scale2{ 
+	bottom: 0; 
+	cursor: se-resize}
 
 /*城市闪烁点*/
 @-webkit-keyframes fadeOut{
@@ -196,122 +234,167 @@ body{
 	left: 50%;
 	width: 20px;
 	height: 20px;
-	background: #f00;
+	background: #ff0;
 	border-radius: 50%;
 	-webkit-animation: fadeOut 1s infinite linear alternate; 
 	animation: fadeOut 1s infinite linear alternate; } 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#map .xinJiang{
+/*图片地址输入帮助页面*/
+#help{ 
+	position: relative;
+	width: 1050px;
+	height: 600px;
+	margin: 1500px auto;
+	text-align: center;
+	overflow: hidden; }
+#help .item1,
+#help .item2,
+#help .item3{
+	position: absolute;
 	top: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+	-webkit-transition: left 0.7s linear; 
+	transition: left 0.7s linear; }
+#help .item1{ 
+	left: 0; }
+#help .item2, #help .item3{ 
+	left: -1000px; }
+
+/*前一页 后一页操作*/
+#left,
+#right{ 
+	position: absolute;
+	top: 50%;
+	width: 60px;
+	height: 60px;
+	margin-top: -30px;
+	font-family: 'imooc-icon';
+	font-style: normal;
+	font-size: 60px;
+	color: #625467;
+	cursor: pointer; }
+#left:hover,
+#right:hover{ 
+	color: #637abb; }
+
+#left{ 
+	left: 0; }
+
+#right{ 
+	left: 100%;
+	margin-left: -60px; }
+#top{ 
+	opacity: 0;
+	position: fixed;
+	bottom: 38px;
+	right: 20px;
+	width:50px;
+	height: 50px;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: normal;
+	font-family: 'imooc-icon';
+	cursor: pointer;
+	-webkit-transition: all 0.5 linear; 
+	transition: all 0.5 linear; }
+
+
+
+/*每座城市的位置*/
+#map .xinJiang{
+	top: 10px;
 	left: 0;
 	width: 150px;
-	height: 160px;}
-.neiMengGu{
+	height: 150px;
+	}
+#map .neiMengGu{
 	top: 86px;
 	left: 307px;
 	width: 550px;
 	height: 150px;
 	}
-.xiZang{
+#map .xiZang{
 	top: 160px;
 	left: 0;
 	width: 150px;
 	height: 150px;
 	}
-.gaSu{
+#map .gaSu{
 	top:100px;
 	left: 150px;
 	width: 157px;
 	height: 78px;
 	}
-.ningXia{
+#map .ningXia{
 	top:236px;
 	left: 307px;
 	width: 76px;
 	height: 62px;
 	} 
-.shangXi{
+#map .shangXi{
 	top:236px;
 	left: 383px;
 	width: 236px;
 	height: 62px;
 	}
-.shanXi{
+#map .shanXi{
 	top:236px;
 	left: 619px;
 	width: 77px;
 	height: 62px;
 	}
 
-.heiNan{
+#map .heiNan{
 	top:298px;
 	left: 502px;
 	width: 119px;
 	height: 72px;
 	}
 
-.huBei{
+#map .huBei{
 	top:370px;
 	left: 502px;
 	width: 119px;
 	height: 72px;
 	}
 
-.huNan{
+#map .huNan{
 	top: 450px;
 	left: 621px;
 	width: 99px;
 	height: 78px; }
 
-.heiBei{
+#map .heiBei{
 	top:236px;
 	left: 696px;
 	width: 160px;
 	height: 62px; }
 
-.beiJing{
+#map .beiJing{
 	top:298px;
 	left: 621px;
 	width: 60px;
 	height: 56px; }
 
 
-.tianJin{
+#map .tianJin{
 	top:298px;
 	left: 681px;
 	width: 60px;
 	height: 56px; }
 
 
-.shangDong{
+#map .shangDong{
 	top:354px;
 	left: 621px;
 	width: 160px;
 	height: 46px; }
 
- .anHui{
+#map .anHui{
 	top:400px;
 	left: 621px;
 	width: 146px;
@@ -319,7 +402,7 @@ body{
 
 
 
- .jiangSu{
+#map .jiangSu{
 	top:400px;
 	left: 767px;
 	width: 106px;
@@ -327,109 +410,108 @@ body{
 
 
 
-  .shangHai{
+#map .shangHai{
   	top:400px;
   	left: 873px;
   	width: 46px;
-  	height: 50px;
-;}  
+  	height: 50px;}  
 
- .jiangXi{
+#map .jiangXi{
 	top:450px;
 	left: 720px;
 	width: 106px;
 	height: 78px; } 
 
  
- .zheJiang{
+#map .zheJiang{
 	top:450px;
 	left: 826px;
 	width: 106px;
 	height: 78px; } 
 
- .fuJian{
+#map .fuJian{
 	top: 528px;
 	left: 827px;
 	width: 84px;
 	height: 78px; } 
 
 
- .taiWan{
+#map .taiWan{
 	top:527px;
 	left: 1002px;
 	width: 42px;
 	height: 78px; }
 
- .guangDong{
+#map .guangDong{
 	top:528px;
 	left: 621px;
 	width: 206px;
 	height: 80px; } 
 
 
- .xiangGai{
+#map .xiangGai{
 	top:608px;
 	left: 704px;
 	width: 32px;
 	height: 30px; } 
 
 
- .aoMen{
+#map .aoMen{
 	top:608px;
 	left: 755px;
 	width: 32px;
 	height: 30px; }
 
 
-.liaoNing{
+#map .liaoNing{
 	top:236px;
 	left: 856px;
 	width: 106px;
 	height: 56px; }
-.jiLin{
+#map .jiLin{
 	top:236px;
 	left: 962px;
 	width: 106px;
 	height: 56px; }
-.heiLongJiang{
+#map .heiLongJiang{
 	top: 72px;
 	left: 857px;
 	width: 168px;
 	height: 164px; }
-.qingHai{
+#map .qingHai{
 	top: 178px;
 	left: 150px;
 	width: 157px;
 	height: 120px; }
-.siChuan{
+#map .siChuan{
 	top: 298px;
 	left: 312px;
 	width: 140px;
 	height: 94px; }
-.chongQian{
+#map .chongQian{
 	top: 298px;
 	left: 452px;
 	width: 50px;
 	height: 144px; }
-.yunNan{
+#map .yunNan{
 	top: 392px;
 	left: 314px;
 	width: 138px;
 	height: 110px; }
 
-.guiZhou{
+#map .guiZhou{
 	top: 442px;
 	left: 452px;
 	width: 169px;
 	height: 76px; }
 
-.guangXi{
+#map .guangXi{
 	top: 518px;
 	left: 455px;
 	width: 166px;
 	height: 76px; }
 
-.haiNan{ 
+#map .haiNan{ 
 	top: 653px;
 	left: 649px;
 	width: 80px;
