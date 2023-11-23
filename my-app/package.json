@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
+    "echarts": "^5.4.3",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
