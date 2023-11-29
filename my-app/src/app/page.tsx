@@ -4,18 +4,45 @@ import {option} from "@/components/CommonEcharts";
 import React, {useEffect, useState} from "react";
 import {APIRequest} from "@/utils/API/request";
 import {API_CITIES, API_COUNTRIES} from "@/utils/API/mapRequests";
+import {AxiosResponse} from "axios";
 
 export default function Home() {
     const [chinaGeo, setChinaGeo] = useState()
+    const [provinceNameAndCodeMap, setProvinceNameAndCodeMap] = useState<Record<string, number>>({})
 
-    const getChinaGeo = async () => {
-        const res = await APIRequest({url: API_COUNTRIES})
-        setChinaGeo(res?.data)
+
+    const handleMapClick = (params: echarts.ECElementEvent) => {
+        const provinceCode = provinceNameAndCodeMap[params.name]
+        getCityGeo(provinceCode)
     }
 
-    const getCityGeo = async (provinceCode: string) => {
+
+    const getChinaGeo = async () => {
+        try {
+            const res = await APIRequest({url: API_COUNTRIES})
+            handleChinaGeoData(res)
+        } catch (e) {
+            // TODO fail log
+            return
+        }
+    }
+
+    const handleChinaGeoData = (res?: AxiosResponse<any, any>) => {
+        const data = res?.data
+        setChinaGeo(data)
+        if (data) {
+            const result: Record<string, number> = {}
+            data.features.forEach((item: { properties: { name: string, adcode: number } }) => {
+                result[item.properties.name] = item.properties.adcode
+            })
+            setProvinceNameAndCodeMap(result)
+        }
+    }
+
+    const getCityGeo = async (provinceCode: number) => {
         const res = await APIRequest({url: API_CITIES(provinceCode)})
-        return res?.data
+        const data = res?.data
+        data && echarts.registerMap(provinceCode + '', data)
     }
 
     useEffect(() => {
@@ -28,6 +55,7 @@ export default function Home() {
         const myChart = echarts.init(document.getElementById('main'));
         echarts.registerMap('china', chinaGeo)
         myChart.setOption(option)
+        myChart.on('click', handleMapClick)
     }, [chinaGeo])
 
     return (
