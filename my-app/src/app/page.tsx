@@ -9,6 +9,7 @@ import {AxiosResponse} from "axios";
 export default function Home() {
     const [chinaGeo, setChinaGeo] = useState()
     const [provinceNameAndCodeMap, setProvinceNameAndCodeMap] = useState<Record<string, number>>({})
+    const [cityGeo, setCityGeo] = useState()
 
 
     const handleMapClick = (params: echarts.ECElementEvent) => {
@@ -42,11 +43,14 @@ export default function Home() {
     const getCityGeo = async (provinceCode: number) => {
         const res = await APIRequest({url: API_CITIES(provinceCode)})
         const data = res?.data
-        data && echarts.registerMap(provinceCode + '', data)
+        setCityGeo(data)
+    }
+    const handleBack = () => {
+        void getChinaGeo()
     }
 
     useEffect(() => {
-        getChinaGeo()
+        void getChinaGeo()
 
     }, [])
 
@@ -57,6 +61,14 @@ export default function Home() {
         myChart.setOption(option)
         myChart.on('click', handleMapClick)
     }, [chinaGeo])
+
+    useEffect(() => {
+        if (!cityGeo) return;
+        const myChart = echarts.init(document.getElementById('main'));
+        echarts.registerMap('china', cityGeo)
+        myChart.setOption(option)
+        myChart.on('click', handleBack)
+    }, [cityGeo])
 
     return (
         <div>
