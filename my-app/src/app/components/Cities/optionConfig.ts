@@ -1,35 +1,11 @@
 import {commonConfigOptions} from "@/components/CommonEcharts";
 
-let data = [
-    {
-        name: "湖北",
-        value: [113.289984, 31.42, 2000],
-    },
-    {
-        name: "湖南",
-        value: [112.03042, 27, 200000],
-    },
-
-    {
-        name: "四川",
-        value: [102.112035, 30.630737, 5000],
-    },
-    {
-        name: "重庆",
-        value: [108.112035, 30.630737, 60000],
-    },
-    {
-        name: "山东",
-        value: [118.19, 36.22, 20050],
-    },
-];
-
 
 export const citiesOptionConfig = commonConfigOptions(
     {
         backgroundColor: "#021640",
         geo: {
-            map: 'china',
+            map: 'city',
             aspectScale: 0.75, //长宽比
             zoom: 1,
             top: 90,
@@ -52,21 +28,21 @@ export const citiesOptionConfig = commonConfigOptions(
                     }
                 }
             },
-            regions: [{
-                name: '南海诸岛',
-                itemStyle: {
-                    areaColor: 'rgba(0, 10, 52, 1)',
-
-                    borderColor: 'rgba(0, 10, 52, 1)',
-                    normal: {
-                        opacity: 0,
-                        label: {
-                            show: true,
-                            color: "#009cc9",
-                        }
-                    }
-                },
-            }],
+            // regions: [{
+            //     name: '南海诸岛',
+            //     itemStyle: {
+            //         areaColor: 'rgba(0, 10, 52, 1)',
+            //
+            //         borderColor: 'rgba(0, 10, 52, 1)',
+            //         normal: {
+            //             opacity: 0,
+            //             label: {
+            //                 show: true,
+            //                 color: "#009cc9",
+            //             }
+            //         }
+            //     },
+            // }],
         },
         visualMap: {
             //图例值控制
@@ -93,14 +69,14 @@ export const citiesOptionConfig = commonConfigOptions(
                 aspectScale: 0.75,
                 zoom: 1,
                 // roam: false,
-                map: 'china', //使用
+                map: 'city', //使用
                 top: 90,
                 label: {
                     show: true,
                     color: '#fff',
 
                 },
-                data: data.map(item => ({...item, visualMap: false})),
+                data: [],
                 emphasis: {
                     // disabled: true,
                     label: {
@@ -157,7 +133,7 @@ export const citiesOptionConfig = commonConfigOptions(
                     fontSize: 12,
                 },
 
-                data: data,
+                data: [],
                 itemStyle: {
                     //坐标点颜色
                     color: "#ff3f3a",
@@ -180,7 +156,7 @@ export const citiesOptionConfig = commonConfigOptions(
                     borderColor: "#aee9fb",
                     borderWidth: 0.6,
                 },
-                data: data,
+                data: [],
             },
         ],
     }

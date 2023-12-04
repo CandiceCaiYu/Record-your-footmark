@@ -28,7 +28,7 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
     useEffect(() => {
         if (!cityGeo) return;
         const myChart = echarts.init(document.getElementById('city'));
-        echarts.registerMap('china', cityGeo)
+        echarts.registerMap('city', cityGeo)
         myChart.setOption(citiesOptionConfig)
         myChart.on('click', handleBack)
     }, [cityGeo])
