@@ -4,46 +4,6 @@ import {commonConfigOptions} from "@/components/CommonEcharts";
 export const citiesOptionConfig = commonConfigOptions(
     {
         backgroundColor: "#021640",
-        // geo: {
-        //     map: 'city',
-        //     aspectScale: 0.75, //长宽比
-        //     zoom: 1,
-        //     top: 90,
-        //     roam: true,
-        //     itemStyle: {
-        //         normal: {
-        //             areaColor: "#d47e63",
-        //             shadowColor: '#002666',
-        //             shadowOffsetX: 2,
-        //             shadowOffsetY: 6,
-        //             borderWidth: 2,
-        //             borderColor: "#d47e63"
-        //         },
-        //         emphasis: {
-        //             areaColor: '#2AB8FF',
-        //             borderWidth: 0,
-        //             color: 'green',
-        //             label: {
-        //                 show: true
-        //             }
-        //         }
-        //     },
-        //     // regions: [{
-        //     //     name: '南海诸岛',
-        //     //     itemStyle: {
-        //     //         areaColor: 'rgba(0, 10, 52, 1)',
-        //     //
-        //     //         borderColor: 'rgba(0, 10, 52, 1)',
-        //     //         normal: {
-        //     //             opacity: 0,
-        //     //             label: {
-        //     //                 show: true,
-        //     //                 color: "#009cc9",
-        //     //             }
-        //     //         }
-        //     //     },
-        //     // }],
-        // },
         visualMap: {
             //图例值控制
             min: 0,
