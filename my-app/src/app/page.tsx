@@ -18,6 +18,7 @@ export default function Home() {
 
     return (
         <div className={styles.main}>
+            {provinceCode && <button className={styles.back_button} onClick={cleanProvinceCode}>Back</button>}
             {provinceCode ?
                 <Cities provinceCode={provinceCode} cleanProvinceCode={cleanProvinceCode}/>
                 :

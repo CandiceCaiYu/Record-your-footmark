@@ -23,7 +23,7 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
         }
     }
     const handleBack = () => {
-        cleanProvinceCode()
+        // cleanProvinceCode()
     }
     useEffect(() => {
         if (!cityGeo) return;
