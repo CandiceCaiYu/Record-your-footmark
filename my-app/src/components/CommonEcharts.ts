@@ -246,6 +246,5 @@ export const option: ECOption = {
     ],
 };
 
-
-// export defa
+export const commonConfigOptions = (options: ECOption): ECOption => options
 

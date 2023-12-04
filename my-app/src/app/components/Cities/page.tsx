@@ -1,9 +1,9 @@
 'use client'
 import React, {useEffect, useState} from "react";
 import * as echarts from "echarts";
-import {option} from "@/components/CommonEcharts";
 import {APIRequest} from "@/utils/API/request";
 import {API_CITIES} from "@/utils/API/mapRequests";
+import {citiesOptionConfig} from "@/app/components/Cities/optionConfig";
 
 interface Props {
     provinceCode?: number;
@@ -29,7 +29,7 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
         if (!cityGeo) return;
         const myChart = echarts.init(document.getElementById('city'));
         echarts.registerMap('china', cityGeo)
-        myChart.setOption(option)
+        myChart.setOption(citiesOptionConfig)
         myChart.on('click', handleBack)
     }, [cityGeo])
 

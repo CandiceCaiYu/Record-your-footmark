@@ -1,10 +1,10 @@
 'use client'
 import React, {useEffect, useState} from "react";
 import * as echarts from "echarts";
-import {option} from "@/components/CommonEcharts";
 import {AxiosResponse} from "axios";
 import {APIRequest} from "@/utils/API/request";
 import {API_COUNTRIES} from "@/utils/API/mapRequests";
+import {provincesOptionConfig} from "@/app/components/Provinces/optionConfig";
 
 interface Props {
     handleClick: (provinceCode: number) => void
@@ -43,7 +43,7 @@ const Provinces = (props: Props) => {
         if (!chinaGeo) return;
         const myChart = echarts.init(document.getElementById('province'));
         echarts.registerMap('china', chinaGeo)
-        myChart.setOption(option)
+        myChart.setOption(provincesOptionConfig)
         myChart.on('click', handleClickForCallCity)
     }, [chinaGeo])
 
