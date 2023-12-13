@@ -4,6 +4,7 @@ import * as echarts from "echarts";
 import {APIRequest} from "@/utils/API/request";
 import {API_CITIES} from "@/utils/API/mapRequests";
 import {citiesOptionConfig} from "@/app/components/Cities/optionConfig";
+import {GeoJSONSourceInput} from "echarts/types/src/coord/geo/geoTypes";
 
 interface Props {
     provinceCode?: number;
@@ -11,7 +12,7 @@ interface Props {
 }
 
 const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
-    const [cityGeo, setCityGeo] = useState()
+    const [cityGeo, setCityGeo] = useState<GeoJSONSourceInput>()
     const getCityGeo = async (provinceCode: number) => {
         try {
 
@@ -22,15 +23,19 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
             return
         }
     }
-    const handleBack = () => {
-        // cleanProvinceCode()
+    const handleClick = (params: echarts.ECElementEvent) => {
+        if (typeof cityGeo === 'string') return;
+        const currentCityInfo = cityGeo?.features?.[params.dataIndex]
+        console.log(currentCityInfo)
+
+
     }
     useEffect(() => {
         if (!cityGeo) return;
         const myChart = echarts.init(document.getElementById('city'));
         echarts.registerMap('city', cityGeo)
         myChart.setOption(citiesOptionConfig)
-        myChart.on('click', handleBack)
+        myChart.on('click', handleClick)
     }, [cityGeo])
 
     useEffect(() => {

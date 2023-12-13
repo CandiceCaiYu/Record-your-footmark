@@ -101,7 +101,7 @@ export const provincesOptionConfig = commonConfigOptions(
                     color: '#fff',
 
                 },
-                data: data.map(item => ({...item, visualMap: false})),
+                data: data,
                 emphasis: {
                     // disabled: true,
                     label: {

@@ -5,14 +5,14 @@ import {AxiosResponse} from "axios";
 import {APIRequest} from "@/utils/API/request";
 import {API_COUNTRIES} from "@/utils/API/mapRequests";
 import {provincesOptionConfig} from "@/app/components/Provinces/optionConfig";
+import {GeoJSONSourceInput} from "echarts/types/src/coord/geo/geoTypes";
 
 interface Props {
     handleClick: (provinceCode: number) => void
 }
 
 const Provinces = (props: Props) => {
-    const [chinaGeo, setChinaGeo] = useState()
-    const [provinceNameAndCodeMap, setProvinceNameAndCodeMap] = useState<Record<string, number>>({})
+    const [chinaGeo, setChinaGeo] = useState<GeoJSONSourceInput>()
     const getChinaGeo = async () => {
         try {
             const res = await APIRequest({url: API_COUNTRIES})
@@ -25,18 +25,13 @@ const Provinces = (props: Props) => {
     const handleChinaGeoData = (res?: AxiosResponse<any, any>) => {
         const data = res?.data
         setChinaGeo(data)
-        if (data) {
-            const result: Record<string, number> = {}
-            data.features.forEach((item: { properties: { name: string, adcode: number } }) => {
-                result[item.properties.name] = item.properties.adcode
-            })
-            setProvinceNameAndCodeMap(result)
-        }
     }
 
     const handleClickForCallCity = (params: echarts.ECElementEvent) => {
-        const provinceCode = provinceNameAndCodeMap[params.name]
-        props.handleClick(provinceCode)
+        if (typeof chinaGeo === 'string') return;
+        // dataIndex-data.length
+        const province = chinaGeo?.features[params.dataIndex].properties
+        province && props.handleClick(province.adcode)
     }
 
     useEffect(() => {
