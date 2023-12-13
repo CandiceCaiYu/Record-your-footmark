@@ -31,8 +31,9 @@ export const provincesOptionConfig = commonConfigOptions(
         geo: {
             map: 'china',
             aspectScale: 0.75, //长宽比
-            zoom: 1,
-            top: 90,
+            zoom: 1.5,
+            top: 240,
+            scale: 1.5,
             roam: false,
             itemStyle: {
                 normal: {
@@ -91,10 +92,10 @@ export const provincesOptionConfig = commonConfigOptions(
                 roam: false,
                 layoutSize: "90%",
                 aspectScale: 0.75,
-                zoom: 1,
+                zoom: 1.5,
                 // roam: false,
                 map: 'china', //使用
-                top: 90,
+                top: 240,
                 label: {
                     show: true,
                     color: '#fff',

@@ -52,7 +52,7 @@ const Provinces = (props: Props) => {
 
     }, [])
     return (
-        <div id={'province'} style={{width: '1200px', height: '980px'}}></div>
+        <div id={'province'} style={{width: '100%', height: '100vh'}}></div>
     )
 }
 
