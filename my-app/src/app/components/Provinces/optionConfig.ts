@@ -1,6 +1,6 @@
 import {commonConfigOptions} from "@/components/CommonEcharts";
 
-let data = [
+let data1 = [
     {
         name: "湖北",
         value: [113.289984, 31.42, 2000],
@@ -25,7 +25,7 @@ let data = [
 ];
 
 
-export const provincesOptionConfig = commonConfigOptions(
+export const provincesOptionConfig = (data) => commonConfigOptions(
     {
         backgroundColor: "#021640",
         geo: {

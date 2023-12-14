@@ -1,7 +1,7 @@
 import {commonConfigOptions} from "@/components/CommonEcharts";
 
 
-export const citiesOptionConfig = commonConfigOptions(
+export const citiesOptionConfig = data => commonConfigOptions(
     {
         backgroundColor: "#021640",
         visualMap: {
@@ -39,7 +39,7 @@ export const citiesOptionConfig = commonConfigOptions(
                     color: '#fff',
 
                 },
-                data: [],
+                data: data,
                 emphasis: {
                     // disabled: true,
                     label: {
@@ -96,7 +96,7 @@ export const citiesOptionConfig = commonConfigOptions(
                     fontSize: 12,
                 },
 
-                data: [],
+                data: data,
                 itemStyle: {
                     //坐标点颜色
                     color: "#ff3f3a",
@@ -119,7 +119,7 @@ export const citiesOptionConfig = commonConfigOptions(
                     borderColor: "#aee9fb",
                     borderWidth: 0.6,
                 },
-                data: [],
+                data: data,
             },
         ],
     }
