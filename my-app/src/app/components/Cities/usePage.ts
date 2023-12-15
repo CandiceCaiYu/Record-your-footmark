@@ -29,7 +29,7 @@ export const usePage = (provinceCode?: number, cityChart?: echarts.ECharts) => {
         }
     }
     const handleClick = (params: echarts.ECElementEvent) => {
-        // void handleSaveCityInfo(params)
+        void handleSaveCityInfo(params)
     }
 
     const handleSaveCityInfo = async (params: echarts.ECElementEvent) => {
@@ -40,9 +40,10 @@ export const usePage = (provinceCode?: number, cityChart?: echarts.ECharts) => {
             method: 'post', url: API_TRAVEL_INFO_CITY, data: {
                 id: Date.now(),
                 name: currentCityInfo?.properties.name,
-                data: [...currentCityInfo?.properties.center, 1]
+                value: [...currentCityInfo?.properties.center, Math.random() * 100 + 3]
             }
         })
+        void getCityTravel()
     }
     useEffect(() => {
         if (!cityGeo || !cityChart) return;

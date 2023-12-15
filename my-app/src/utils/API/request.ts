@@ -4,13 +4,14 @@ import axios, {Method} from 'axios';
 // Make a request for a user with a given ID
 interface APIRequestType {
     method?: Method,
-    url?: string
+    url?: string,
+    data: any
 }
 
 // @ts-ignore
-export const APIRequest = async ({method, url}: APIRequestType) => {
+export const APIRequest = async ({method, url, data}: APIRequestType) => {
     try {
-        const response = await axios({method: method || 'GET', url});
+        const response = await axios({method: method || 'GET', url, data,});
         // handle success
         console.log(response);
         return response;

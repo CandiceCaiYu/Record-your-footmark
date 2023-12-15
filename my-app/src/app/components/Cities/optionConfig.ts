@@ -12,22 +12,12 @@ export const citiesOptionConfig = data => commonConfigOptions(
             // scale: 1.5,
             roam: false,
             itemStyle: {
-                normal: {
-                    areaColor: "#d47e63",
-                    shadowColor: '#002666',
-                    shadowOffsetX: 2,
-                    shadowOffsetY: 6,
-                    borderWidth: 2,
-                    borderColor: "#d47e63"
-                },
-                emphasis: {
-                    areaColor: '#2AB8FF',
-                    borderWidth: 0,
-                    color: 'green',
-                    label: {
-                        show: true
-                    }
-                }
+                areaColor: "#d47e63",
+                shadowColor: '#002666',
+                shadowOffsetX: 2,
+                shadowOffsetY: 6,
+                borderWidth: 2,
+                borderColor: "#d47e63"
             },
             regions: [{
                 name: '南海诸岛',
@@ -81,15 +71,6 @@ export const citiesOptionConfig = data => commonConfigOptions(
 
                 },
                 data: data,
-                emphasis: {
-                    // disabled: true,
-                    label: {
-                        color: 'rgb(183,185,14)'
-                    },
-                    itemStyle: {
-                        areaColor: '#eee',
-                    }
-                },
                 itemStyle: {
                     borderColor: 'rgb(147, 235, 248,.8)',
                     borderWidth: 0.2,
@@ -99,7 +80,7 @@ export const citiesOptionConfig = data => commonConfigOptions(
                         y: 0.8,
                         x2: 0,
                         y2: 0,
-                        // r: 0.8,
+                        r: 0.8,
                         colorStops: [{
                             offset: 0,
                             color: '#002283' // 0% 处的颜色
@@ -111,7 +92,7 @@ export const citiesOptionConfig = data => commonConfigOptions(
                                 offset: 1,
                                 color: '#021640'  // 100% 处的颜色
                             }],
-                        // globalCoord: true // 缺省为 false
+                        globalCoord: true // 缺省为 false
                     },
 
                 },
