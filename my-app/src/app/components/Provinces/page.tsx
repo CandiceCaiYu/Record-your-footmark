@@ -15,7 +15,7 @@ interface Props {
 const Provinces = (props: Props) => {
     const [chinaGeo, setChinaGeo] = useState<GeoJSONSourceInput>()
     const [provinceChart, setProvinceChart] = useState<echarts.ECharts>()
-    const [provinceTravelInfo, setProvinceTravelInfo] = useState()
+    const [provinceTravelInfo, setProvinceTravelInfo] = useState([])
 
     const getChinaGeo = async () => {
         try {
@@ -44,7 +44,7 @@ const Provinces = (props: Props) => {
     const handleClickForCallCity = (params: echarts.ECElementEvent) => {
         if (typeof chinaGeo === 'string') return;
         // dataIndex-data.length
-        const province = chinaGeo?.features[params.dataIndex].properties
+        const province = chinaGeo?.features[params.dataIndex - provinceTravelInfo.length].properties
         province && props.handleClick(province.adcode)
     }
 
@@ -66,7 +66,7 @@ const Provinces = (props: Props) => {
     }, [chinaGeo])
 
     useEffect(() => {
-        provinceChart?.setOption(provincesOptionConfig(provinceTravelInfo))
+        provinceChart && provinceChart.setOption(provincesOptionConfig(provinceTravelInfo))
     }, [provinceTravelInfo]);
     return (
         <div id={'province'} style={{width: '100%', height: '100vh'}}></div>

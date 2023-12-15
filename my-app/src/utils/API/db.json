@@ -1,9 +1,13 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": 1001,
+      "name": "成都",
+      "value": [
+        104.065735,
+        30.659462,
+        1000
+      ]
     }
   ],
   "comments": [

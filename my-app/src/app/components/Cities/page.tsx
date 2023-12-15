@@ -20,14 +20,15 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
     }, []);
 
 
+    const city = cityTravelInfo?.[0] || {}
     return (
         <div className={styles.city_wrapper}>
             <div id={'city'} style={{width: '1200px', height: '1080px'}}></div>
             <section className={styles.city_content}>
-                <h2>{cityTravelInfo?.provinceName}{cityTravelInfo?.cityName && `- ${cityTravelInfo.cityName}}`}</h2>
-                <p>{cityTravelInfo?.date}</p>
+                <h2>{city.provinceName}{city.cityName && `- ${city.cityName}}`}</h2>
+                <p>{city.date}</p>
                 <article>
-                    {cityTravelInfo?.content}
+                    {city.content}
                 </article>
             </section>
         </div>
