@@ -27,7 +27,7 @@ let data1 = [
 
 export const provincesOptionConfig = (data) => commonConfigOptions(
     {
-        backgroundColor: "#021640",
+        backgroundColor: "#0F0F0F",
         geo: {
             map: 'china',
             aspectScale: 0.75, //长宽比
@@ -105,10 +105,10 @@ export const provincesOptionConfig = (data) => commonConfigOptions(
                 emphasis: {
                     // disabled: true,
                     label: {
-                        color: 'rgb(183,185,14)'
+                        color: '#fff'
                     },
                     itemStyle: {
-                        areaColor: '#eee',
+                        areaColor: '#008170',
                     }
                 },
                 itemStyle: {
