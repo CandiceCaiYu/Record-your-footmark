@@ -3,38 +3,7 @@ import {commonConfigOptions} from "@/components/CommonEcharts";
 
 export const citiesOptionConfig = data => commonConfigOptions(
     {
-        backgroundColor: "#021640",
-        geo: {
-            map: 'city',
-            aspectScale: 0.75, //长宽比
-            zoom: 1,
-            top: 90,
-            // scale: 1.5,
-            roam: false,
-            itemStyle: {
-                areaColor: "#d47e63",
-                shadowColor: '#002666',
-                shadowOffsetX: 2,
-                shadowOffsetY: 6,
-                borderWidth: 2,
-                borderColor: "#d47e63"
-            },
-            regions: [{
-                name: '南海诸岛',
-                itemStyle: {
-                    areaColor: 'rgba(0, 10, 52, 1)',
-
-                    borderColor: 'rgba(0, 10, 52, 1)',
-                    normal: {
-                        opacity: 0,
-                        label: {
-                            show: true,
-                            color: "#009cc9",
-                        }
-                    }
-                },
-            }],
-        },
+        backgroundColor: "#2D9596",
         visualMap: {
             //图例值控制
             min: 0,
@@ -44,11 +13,11 @@ export const citiesOptionConfig = data => commonConfigOptions(
             right: 50,
             // seriesIndex: 1,
             bottom: 50,
-            // color: ["#00eaff", "#fc9700", "#ffde00", "#ffde00", "red"],
+            color: ["#9AD0C2",],
             // inRange:{
             //   symbolSize: [10, 20]},
             textStyle: {
-                color: "#fff",
+                color: "#333",
             },
         },
         series: [
@@ -93,55 +62,20 @@ export const citiesOptionConfig = data => commonConfigOptions(
                                 color: '#021640'  // 100% 处的颜色
                             }],
                         globalCoord: true // 缺省为 false
-                    },
-
+                    }
                 },
-            },
-            // 区域散点图
-            {
-                type: "effectScatter",
-                coordinateSystem: "geo",
-                zlevel: 2,
-                symbolSize: 6,
-                rippleEffect: {
-                    //坐标点动画
-                    period: 2,
-                    scale: 4,
-                    brushType: "fill",
+                emphasis: {
+                    itemStyle: {
+                        areaColor: '#2D9596',
+                        // color: '#f0f'
+                    }
                 },
-                label: {
-                    show: false,
-                    position: "right",
-                    formatter: "{b}",
-                    color: "#b3e2f2",
-                    fontWeight: 400,
-                    fontSize: 12,
-                },
-
-                data: data,
-                itemStyle: {
-                    //坐标点颜色
-                    color: "#ff3f3a",
-                    shadowBlur: 20,
-                    shadowColor: "#fff",
-
-                },
-            },
-            {
-                name: "label",
-                type: "scatter",
-                coordinateSystem: "geo",
-                symbol: "pin",
-                symbolSize: [20, 24],
-                zlevel: 2,
-
-                itemStyle: {
-                    color: "#6495ED", //标志颜色
-                    opacity: 0.8,
-                    borderColor: "#aee9fb",
-                    borderWidth: 0.6,
-                },
-                data: data,
+                select: {
+                    itemStyle: {
+                        areaColor: '#ECF4D6',
+                        color: '#f0f'
+                    }
+                }
             },
         ],
     }
