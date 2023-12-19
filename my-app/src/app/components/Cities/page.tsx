@@ -3,9 +3,10 @@ import React, {useEffect, useState} from "react";
 import * as echarts from "echarts";
 import styles from './styles.module.scss'
 import {usePage} from "@/app/components/Cities/usePage";
-import {DatePicker, Form} from "antd";
+import {Button, DatePicker, Flex, Form} from "antd";
 import {City_info} from "@/app/components/Cities/optionConfig";
 import {Dayjs} from "dayjs";
+import MDEditor from "@uiw/react-md-editor";
 
 interface Props {
     provinceCode?: number;
@@ -25,6 +26,12 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
         })
     }
 
+    const handleContentChange = (value, event) => {
+        setCurrentCityInfo({
+            ...currentCityInfo,
+            content: value
+        })
+    }
 
     useEffect(() => {
         const myChart = echarts.init(document.getElementById('city'));
@@ -43,10 +50,16 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
                                     onChange={handleOnChange}
                                     className={styles.datePicker}/>
                     </Form.Item>
+                    <Form.Item label={'内容'} name={'content'} wrapperCol={{span: 20}}>
+                        <MDEditor value={currentCityInfo.content} onChange={handleContentChange}></MDEditor>
+                        {/*<MDEditor.Markdown source={currentCityInfo.content}></MDEditor.Markdown>*/}
+                    </Form.Item>
+
                 </Form>
-                <article>
-                    {currentCityInfo.content}
-                </article>
+                <Flex gap={"small"} wrap={'wrap'}>
+                    <Button>Cancel</Button>
+                    <Button type={'primary'}>Save</Button>
+                </Flex>
             </section>
         </div>
     )

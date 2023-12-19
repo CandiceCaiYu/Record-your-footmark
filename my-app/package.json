@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
+    "@uiw/react-md-editor": "^4.0.1",
     "antd": "^5.12.3",
     "axios": "^1.6.2",
     "echarts": "^5.4.3",
