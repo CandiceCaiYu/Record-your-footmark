@@ -90,4 +90,5 @@ export interface City_info {
     content?: string;
     imageName?: string;
     date?: Dayjs;
+    center?: Array<number>
 }

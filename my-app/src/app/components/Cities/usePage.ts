@@ -7,7 +7,7 @@ import {API_TRAVEL_INFO_CITY} from "@/utils/API/travelRequest";
 import {citiesOptionConfig, City_info} from "@/app/components/Cities/optionConfig";
 import {Dayjs} from "dayjs";
 
-export const usePage = (provinceCode?: number, cityChart?: echarts.ECharts) => {
+export const usePage = (provinceInfo?: { code: number, name?: string }, cityChart?: echarts.ECharts) => {
 
     const [cityGeo, setCityGeo] = useState<GeoJSONSourceInput>()
     const [cityTravelInfo, setCityTravelInfo] = useState<Array<City_info>>()
@@ -35,9 +35,13 @@ export const usePage = (provinceCode?: number, cityChart?: echarts.ECharts) => {
     const handleClick = (params: echarts.ECElementEvent) => {
         // void handleSaveCityInfo(params)
         if (!params) return;
+        const selectCityInfo = cityGeo?.features?.[params.dataIndex - cityTravelInfo?.length]
+
         setCurrentCityInfo({
             ...currentCityInfo,
-            cityName: params.name
+            cityName: params.name,
+            cityCode: selectCityInfo.properties.adcode,
+            center: selectCityInfo.properties.center,
         })
     }
 
@@ -55,8 +59,8 @@ export const usePage = (provinceCode?: number, cityChart?: echarts.ECharts) => {
         })
     }
 
-    const handleSubmit = () => {
-        console.log('cr...', currentCityInfo)
+    const handleSubmit = async () => {
+        await handleSaveCityInfo()
         setIsEditable(false)
     }
 
@@ -67,15 +71,13 @@ export const usePage = (provinceCode?: number, cityChart?: echarts.ECharts) => {
         })
     }, [cityTravelInfo]);
 
-    const handleSaveCityInfo = async (params: echarts.ECElementEvent) => {
+    const handleSaveCityInfo = async () => {
         if (typeof cityGeo === 'string') return;
-        const currentCityInfo = cityGeo?.features?.[params.dataIndex - cityTravelInfo?.length]
-        console.log('currentCityInfo...', currentCityInfo)
         await APIRequest({
             method: 'post', url: API_TRAVEL_INFO_CITY, data: {
+                ...currentCityInfo,
                 id: Date.now(),
-                name: currentCityInfo?.properties.name,
-                value: [...currentCityInfo?.properties.center, Math.random() * 100 + 3]
+                value: [...(currentCityInfo?.center || []), Math.random() * 100 + 3]
             }
         })
         void getCityTravel()
@@ -94,10 +96,15 @@ export const usePage = (provinceCode?: number, cityChart?: echarts.ECharts) => {
 
 
     useEffect(() => {
-        if (!provinceCode) return
-        void getCityGeo(provinceCode)
+        if (!provinceInfo?.code) return
+        setCurrentCityInfo({
+            ...currentCityInfo,
+            provinceName: provinceInfo.name,
+            provinceCode: provinceInfo.code
+        })
+        void getCityGeo(provinceInfo.code)
         void getCityTravel()
-    }, [provinceCode]);
+    }, [provinceInfo]);
 
     return {
         currentCityInfo, isEditable, setIsEditable, handleDateChange, handleContentChange, handleSubmit

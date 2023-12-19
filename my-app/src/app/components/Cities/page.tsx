@@ -7,18 +7,21 @@ import {Button, DatePicker, Form, Space} from "antd";
 import MDEditor from "@uiw/react-md-editor";
 
 interface Props {
-    provinceCode?: number;
+    provinceInfo: {
+        code: number;
+        name?: string
+    }
     cleanProvinceCode: () => void
 }
 
 
-const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
+const Cities = ({provinceInfo, cleanProvinceCode}: Props) => {
     const [cityChart, setCityChart] = useState<echarts.ECharts>()
     const {
         currentCityInfo, isEditable, setIsEditable,
         handleDateChange, handleContentChange,
         handleSubmit
-    } = usePage(provinceCode, cityChart)
+    } = usePage(provinceInfo, cityChart)
 
 
     useEffect(() => {

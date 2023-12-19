@@ -8,8 +8,13 @@ import {provincesOptionConfig} from "@/app/components/Provinces/optionConfig";
 import {GeoJSONSourceInput} from "echarts/types/src/coord/geo/geoTypes";
 import {API_TRAVEL_INFO_PROVINCE} from "@/utils/API/travelRequest";
 
+export interface ProvinceInfoProps {
+    code: number,
+    name?: string
+}
+
 interface Props {
-    handleClick: (provinceCode: number) => void
+    handleClick: (params: ProvinceInfoProps) => void
 }
 
 const Provinces = (props: Props) => {
@@ -45,7 +50,10 @@ const Provinces = (props: Props) => {
         if (typeof chinaGeo === 'string') return;
         // dataIndex-data.length
         const province = chinaGeo?.features[params.dataIndex - provinceTravelInfo.length].properties
-        province && props.handleClick(province.adcode)
+        province && props.handleClick({
+            name: province.name,
+            code: province.adcode
+        })
     }
 
 
