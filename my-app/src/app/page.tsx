@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Provinces from "@/app/components/Provinces/page";
 import Cities from "@/app/components/Cities/page";
 import styles from './styles.module.scss'
+import {Button} from "antd";
 
 export default function Home() {
     const [provinceCode, setProvinceCode] = useState<number>()
@@ -18,7 +19,9 @@ export default function Home() {
 
     return (
         <div className={styles.main}>
-            {provinceCode && <button className={styles.back_button} onClick={cleanProvinceCode}>Back</button>}
+            {provinceCode &&
+                <Button type={'text'} className={styles.back_button}
+                        onClick={cleanProvinceCode}> {'< < < Back'}</Button>}
             {provinceCode ?
                 <Cities provinceCode={provinceCode} cleanProvinceCode={cleanProvinceCode}/>
                 :

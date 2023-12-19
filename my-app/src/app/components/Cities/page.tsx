@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import * as echarts from "echarts";
 import styles from './styles.module.scss'
 import {usePage} from "@/app/components/Cities/usePage";
-import {Button, DatePicker, Flex, Form} from "antd";
+import {Button, DatePicker, Form, Space} from "antd";
 import {City_info} from "@/app/components/Cities/optionConfig";
 import {Dayjs} from "dayjs";
 import MDEditor from "@uiw/react-md-editor";
@@ -54,12 +54,14 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
                         <MDEditor value={currentCityInfo.content} onChange={handleContentChange}></MDEditor>
                         {/*<MDEditor.Markdown source={currentCityInfo.content}></MDEditor.Markdown>*/}
                     </Form.Item>
-
+                    <Form.Item>
+                        <Space>
+                            <Button>Cancel</Button>
+                            <Button type="primary" htmlType={'button'}>Save</Button>
+                        </Space>
+                    </Form.Item>
                 </Form>
-                <Flex gap={"small"} wrap={'wrap'}>
-                    <Button>Cancel</Button>
-                    <Button type={'primary'}>Save</Button>
-                </Flex>
+
             </section>
         </div>
     )
