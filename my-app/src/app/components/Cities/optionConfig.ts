@@ -1,4 +1,5 @@
 import {commonConfigOptions} from "@/components/CommonEcharts";
+import {Dayjs} from "dayjs";
 
 
 export const citiesOptionConfig = data => commonConfigOptions(
@@ -82,12 +83,11 @@ export const citiesOptionConfig = data => commonConfigOptions(
 )
 
 export interface City_info {
-    id: number;
-    provinceCode: number;
-    provinceName: string;
-    cityCode: number;
-    cityName: string;
-    content: string;
-    imageName: string;
-    date: string;
+    provinceCode?: number;
+    provinceName?: string;
+    cityCode?: number;
+    cityName?: string;
+    content?: string;
+    imageName?: string;
+    date?: Dayjs;
 }

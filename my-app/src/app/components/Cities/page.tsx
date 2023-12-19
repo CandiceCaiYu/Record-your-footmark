@@ -3,15 +3,27 @@ import React, {useEffect, useState} from "react";
 import * as echarts from "echarts";
 import styles from './styles.module.scss'
 import {usePage} from "@/app/components/Cities/usePage";
+import {DatePicker} from "antd";
+import {City_info} from "@/app/components/Cities/optionConfig";
+import {Dayjs} from "dayjs";
 
 interface Props {
     provinceCode?: number;
     cleanProvinceCode: () => void
 }
 
+
 const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
     const [cityChart, setCityChart] = useState<echarts.ECharts>()
     const {cityTravelInfo} = usePage(provinceCode, cityChart)
+    const [currentCityInfo, setCurrentCityInfo] = useState<City_info>(cityTravelInfo?.[0] || {})
+
+    const handleOnChange = (date: Dayjs | null, dateString: string) => {
+        setCurrentCityInfo({
+            ...currentCityInfo,
+            date: date || undefined
+        })
+    }
 
 
     useEffect(() => {
@@ -20,15 +32,15 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
     }, []);
 
 
-    const city = cityTravelInfo?.[0] || {}
     return (
         <div className={styles.city_wrapper}>
             <div id={'city'} style={{width: '1200px', height: '1080px'}}></div>
             <section className={styles.city_content}>
-                <h2>{city.provinceName}{city.cityName && `- ${city.cityName}}`}</h2>
-                <p>{city.date}</p>
+                <h2>{currentCityInfo.provinceName}{currentCityInfo.cityName && `- ${currentCityInfo.cityName}}`}</h2>
+                <DatePicker defaultValue={currentCityInfo?.date} onChange={handleOnChange}
+                            className={styles.datePicker}/>
                 <article>
-                    {city.content}
+                    {currentCityInfo.content}
                 </article>
             </section>
         </div>
