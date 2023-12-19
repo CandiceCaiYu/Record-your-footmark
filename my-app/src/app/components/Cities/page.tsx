@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import * as echarts from "echarts";
 import styles from './styles.module.scss'
 import {usePage} from "@/app/components/Cities/usePage";
-import {DatePicker} from "antd";
+import {DatePicker, Form} from "antd";
 import {City_info} from "@/app/components/Cities/optionConfig";
 import {Dayjs} from "dayjs";
 
@@ -37,8 +37,13 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
             <div id={'city'} style={{width: '1200px', height: '1080px'}}></div>
             <section className={styles.city_content}>
                 <h2>{currentCityInfo.provinceName}{currentCityInfo.cityName && `- ${currentCityInfo.cityName}}`}</h2>
-                <DatePicker defaultValue={currentCityInfo?.date} onChange={handleOnChange}
-                            className={styles.datePicker}/>
+                <Form labelCol={{span: 3}} wrapperCol={{span: 16}} size={"large"}>
+                    <Form.Item label={'出发时间'} name={'date'} wrapperCol={{span: 6}}>
+                        <DatePicker defaultValue={currentCityInfo?.date}
+                                    onChange={handleOnChange}
+                                    className={styles.datePicker}/>
+                    </Form.Item>
+                </Form>
                 <article>
                     {currentCityInfo.content}
                 </article>
