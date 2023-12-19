@@ -18,6 +18,8 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
     const [cityChart, setCityChart] = useState<echarts.ECharts>()
     const {cityTravelInfo} = usePage(provinceCode, cityChart)
     const [currentCityInfo, setCurrentCityInfo] = useState<City_info>()
+    const [isEditable, setIsEditable] = useState(false)
+
 
     const handleDateChange = (date: Dayjs | null, dateString: string) => {
         setCurrentCityInfo({
@@ -26,7 +28,7 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
         })
     }
 
-    const handleContentChange = (value, event) => {
+    const handleContentChange = (value?: string) => {
         setCurrentCityInfo({
             ...currentCityInfo,
             content: value
@@ -35,6 +37,7 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
 
     const handleSubmit = () => {
         console.log('cr...', currentCityInfo)
+        setIsEditable(false)
     }
 
     useEffect(() => {
@@ -55,16 +58,23 @@ const Cities = ({provinceCode, cleanProvinceCode}: Props) => {
             <section className={styles.city_content}>
                 <h2>{currentCityInfo?.provinceName}{currentCityInfo?.cityName && `- ${currentCityInfo.cityName}}`}</h2>
                 <Form labelCol={{span: 3}} wrapperCol={{span: 16}} size={"large"}>
+                    <Form.Item hidden={isEditable} wrapperCol={{span: 6}}>
+                        <Space>
+                            <Button type={'primary'} onClick={() => setIsEditable(true)}>Edit</Button>
+                        </Space>
+                    </Form.Item>
                     <Form.Item label={'出发时间'} name={'date'} wrapperCol={{span: 6}}>
                         <DatePicker defaultValue={currentCityInfo?.date}
                                     onChange={handleDateChange}
+                                    disabled={!isEditable}
                                     className={styles.datePicker}/>
                     </Form.Item>
                     <Form.Item label={'内容'} name={'content'} wrapperCol={{span: 20}}>
-                        <MDEditor value={currentCityInfo?.content} onChange={handleContentChange}></MDEditor>
-                        {/*<MDEditor.Markdown source={currentCityInfo.content}></MDEditor.Markdown>*/}
+                        {isEditable ?
+                            <MDEditor value={currentCityInfo?.content} onChange={handleContentChange}></MDEditor> :
+                            <MDEditor.Markdown source={currentCityInfo?.content}></MDEditor.Markdown>}
                     </Form.Item>
-                    <Form.Item>
+                    <Form.Item hidden={!isEditable}>
                         <Space>
                             <Button htmlType={'reset'}>Cancel</Button>
                             <Button type="primary" htmlType={'submit'} onClick={handleSubmit}>Submit</Button>
