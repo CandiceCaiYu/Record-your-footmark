@@ -5,7 +5,7 @@ import axios, {Method} from 'axios';
 interface APIRequestType {
     method?: Method,
     url?: string,
-    data: any
+    data?: any
 }
 
 // @ts-ignore
