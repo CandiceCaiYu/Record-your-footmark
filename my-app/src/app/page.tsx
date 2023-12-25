@@ -10,8 +10,7 @@ export default function Home() {
     const [provinceInfo, setProvinceInfo] = useState<ProvinceInfoProps>()
 
     const cleanProvinceCode = () => {
-        setProvinceCode(undefined)
-
+        setProvinceInfo(undefined)
     }
     const getCityGeo = (params: ProvinceInfoProps) => {
         setProvinceInfo(params)
